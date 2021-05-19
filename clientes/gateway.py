@@ -10,3 +10,7 @@ def busca_clientes_nao_excluidos():
     return Cliente.objects.filter(excluido=False)
 
 
+def busca_todos_os_clientes():
+    return Cliente.objects.all()
+
+
