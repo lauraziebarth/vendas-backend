@@ -1,4 +1,3 @@
-
 from rest_framework import viewsets
 
 from produtos.gateway import busca_todos_os_produtos
