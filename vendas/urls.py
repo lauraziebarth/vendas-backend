@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from clientes.views import ClientesViewSet
+from item_pedido.views import ItensPedidoViewSet
 from produtos.views import ProdutosViewSet
 from pedidos.views import PedidosViewSet
 
@@ -25,6 +26,7 @@ router = routers.DefaultRouter()
 router.register('clientes', ClientesViewSet, basename='Clientes')
 router.register('produtos', ProdutosViewSet, basename='Produtos')
 router.register('pedidos', PedidosViewSet, basename='Pedidos')
+router.register('item_pedido', ItensPedidoViewSet, basename='ItensPedido')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
