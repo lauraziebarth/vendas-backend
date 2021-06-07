@@ -4,7 +4,6 @@ from clientes.models import Cliente
 
 
 class Pedido(models.Model):
-    numero = models.IntegerField(db_index=True)
     data_emissao = models.DateTimeField(auto_now=True)
     ultima_alteracao = models.DateTimeField(auto_now=True)
     condicao_pagamento = models.CharField(max_length=100, blank=True, null=True)
