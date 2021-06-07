@@ -12,7 +12,6 @@ class ItemPedido(models.Model):
 
     quantidade = models.DecimalField(max_digits=10, decimal_places=2)
     preco_liquido = models.DecimalField(max_digits=12, decimal_places=2)
-    rentabilidade_produto = models.IntegerField(blank=True, null=True)
     excluido = models.BooleanField(default=False)
 
     pedido = models.ForeignKey(Pedido, on_delete=models.DO_NOTHING)
