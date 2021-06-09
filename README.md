@@ -1,13 +1,20 @@
 # Desafio Mercos Backend
 
-### Como inicializar o projeto 
+### Como inicializar o projeto local
 
-1. Necessário versão Python >= 3.6
-2. Necessário versão Mysql >= 8.0
+1. Necessário versão `Python >= 3.6`
+2. Necessário versão `Mysql >= 8.0`
 3. Executar comando `pip install -r requirements.txt`
 4. Executar o comando `python manage.py migrate`
 
-Para iniciar o servidor execute o comando `python manage.py runserver`.
+Para iniciar o servidor execute o comando `python manage.py runserver`. <br>
+Pronto, agora a API está no ar 🚀 
+
+<br>
+
+> Obs: Você também pode acessar a aplicação pelo link: http://vendas-mercos.herokuapp.com/
+
+---
 
 ### Como popular o banco de dados local
 
@@ -55,4 +62,8 @@ VALUES ('DLT-19 Heavy Blaster Rifle', 5800.00, null, false, '2021-06-09 10:16:00
 
 INSERT INTO produtos_produto (nome, preco_tabela, multiplo, excluido, ultima_alteracao)
 VALUES ('DL-44 Heavy Blaster Pistol', 1500.00, 10, false,  '2021-06-09 10:16:00');
-``
+```
+
+---
+
+Dessa forma, você já pode clonar o projeto do [Frontend](https://github.com/lauraziebarth/pedidos) e fazer os pedidos 👩‍💻
