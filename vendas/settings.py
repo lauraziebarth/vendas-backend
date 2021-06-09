@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'pedidos.apps.PedidosConfig',
     'clientes.apps.ClientesConfig',
     'produtos.apps.ProdutosConfig',
-    'colaboradores.apps.ColaboradoresConfig',
     'item_pedido.apps.ItemPedidoConfig',
 ]
 
