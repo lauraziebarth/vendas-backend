@@ -38,7 +38,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'vendas-mercos.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost'
 ]
 
 
