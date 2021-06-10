@@ -66,4 +66,4 @@ VALUES ('DL-44 Heavy Blaster Pistol', 1500.00, 10, false,  '2021-06-09 10:16:00'
 
 ---
 
-Dessa forma, você já pode clonar o projeto do [Frontend](https://github.com/lauraziebarth/pedidos) e fazer os pedidos 👩‍💻
+Dessa forma, você já pode clonar o projeto do [Frontend](https://github.com/lauraziebarth/vendas-frontend) e fazer os pedidos 👩‍💻
