@@ -37,6 +37,6 @@ class BuscaUmPedidoTests(TestCase):
     def test_busca_um_pedido(self):
         result = busca_um_pedido(self.pedido_1.id)
 
-        self.assertEqual(result.condicao_pagamento, 'a vista')
-        self.assertEqual(result.id, 1)
-        self.assertEqual(result.cliente_id, self.cliente_1.id)
+        self.assertEqual(result['condicao_pagamento'], 'a vista')
+        self.assertEqual(result['id'], 1)
+        self.assertEqual(result['cliente_id'], self.cliente_1.id)

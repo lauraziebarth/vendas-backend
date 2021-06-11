@@ -4,7 +4,7 @@ from pedidos.models import Pedido
 from item_pedido.models import ItemPedido
 from clientes.models import Cliente
 from produtos.models import Produto
-from pedidos.gateway import busca_todos_os_pedidos, busca_um_pedido
+from pedidos.gateway import busca_todos_os_pedidos
 
 
 class BuscaTodosOsItensDeUmPedidoTests(TestCase):
