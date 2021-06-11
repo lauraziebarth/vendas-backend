@@ -47,7 +47,6 @@ def atualiza_itens_pedido(pedido_id, itens_novos):
             item.save()
 
     for item in itens_novos:
-        print(item)
         if item['id'] not in itens_antigos_ids:
             item_criado = ItemPedido()
             item_criado.produto_id = item['produto_id']
