@@ -7,7 +7,7 @@ from produtos.models import Produto
 from pedidos.gateway import busca_todos_os_pedidos
 
 
-class BuscaTodosOsItensDeUmPedidoTests(TestCase):
+class BuscaTodosOsPedidoTests(TestCase):
     def setUp(self):
         self.cliente_1 = Cliente.objects.create(nome='Cliente 1', excluido=False)
         self.cliente_2 = Cliente.objects.create(nome='Cliente 2', excluido=False)
