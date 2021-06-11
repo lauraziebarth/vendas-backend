@@ -16,7 +16,6 @@ class PedidosViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         queryset = busca_um_pedido(pk)
-        print(queryset)
         serializer_class = PedidoSerializer(queryset)
         return Response(serializer_class.data)
 
