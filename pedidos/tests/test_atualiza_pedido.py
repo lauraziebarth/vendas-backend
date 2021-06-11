@@ -23,7 +23,6 @@ class AtualizaPedidoTests(TestCase):
         serializer_pedido_novo = PedidoSerializer(data=self.pedido_novo)
         if serializer_pedido_novo.is_valid():
             result = atualiza_pedido(pedido_id, self.pedido_novo)
-            print(result)
 
         self.assertEqual(result.id, 1)
         self.assertEqual(result.condicao_pagamento, 'a vista')
