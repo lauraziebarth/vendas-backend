@@ -61,4 +61,3 @@ def atualiza_itens_pedido(pedido_id, itens_novos):
             item_criado.save()
 
         return item
-
