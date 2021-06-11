@@ -1,3 +1,4 @@
+from item_pedido.gateway import busca_um_item_pedido_por_id, busca_todos_os_itens_de_um_pedido
 from item_pedido.models import ItemPedido
 
 
@@ -16,4 +17,27 @@ def cria_item_pedido(pedido_id, itens):
         item_pedido.save()
 
 
+def atualiza_itens_pedido(pedido_id, itens_novos):
+    itens_antigos = busca_todos_os_itens_de_um_pedido(pedido_id)
+    novos_itens_ids = []
 
+    for item_novo in itens_novos:
+        novos_itens_ids.append(item_novo['id'])
+
+        item = busca_um_item_pedido_por_id(item_novo['id'])
+        item.produto_id = item_novo['produto_id']
+        item.produto_multiplo = item_novo['produto_multiplo']
+        item.produto_nome = item_novo['produto_nome']
+        item.produto_preco_tabela = item_novo['produto_preco_tabela']
+        item.quantidade = item_novo['quantidade']
+        item.preco_liquido = item_novo['preco_liquido']
+        item.rentabilidade = item_novo['rentabilidade']
+        item.total = item_novo['total']
+        item.pedido_id = pedido_id
+        item.save()
+
+    for item in itens_antigos:
+        if item.id not in novos_itens_ids:
+            item = busca_um_item_pedido_por_id(item.id)
+            item.excluido = True
+            item.save()

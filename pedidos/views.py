@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from item_pedido.crud import cria_item_pedido
-from pedidos.gateway import busca_todos_os_pedidos, busca_um_pedido
+from pedidos.gateway import busca_todos_os_pedidos, busca_um_pedido, atualiza_pedido
 from pedidos.serializer import PedidoSerializer
 from rest_framework.response import Response
 
@@ -18,6 +18,15 @@ class PedidosViewSet(viewsets.ViewSet):
         queryset = busca_um_pedido(pk)
         serializer_class = PedidoSerializer(queryset)
         return Response(serializer_class.data)
+
+
+    def update(self, request, pk=None):
+        serializer_pedido = PedidoSerializer(data=request.data)
+
+        if serializer_pedido.is_valid():
+            atualiza_pedido(pk, request.data)
+
+        return Response(serializer_pedido.data)
 
 
     def create(self, request):

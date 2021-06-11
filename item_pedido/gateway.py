@@ -2,7 +2,7 @@ from item_pedido.models import ItemPedido
 
 
 def busca_todos_os_itens_de_um_pedido(pedido_id):
-    return ItemPedido.objects.filter(pedido_id=pedido_id)
+    return ItemPedido.objects.filter(pedido_id=pedido_id, excluido=False)
 
 
 def busca_um_item_pedido_por_id(id):
