@@ -16,7 +16,7 @@ class AlteraItensPedidoTests(TestCase):
                                        'produto_preco_tabela': 75000, 'quantidade': 8, 'preco_liquido': 75000.99,
                                        'total': 60007.92, 'rentabilidade': 'great', 'id':1}]}
 
-    def test_cria_item_pedido(self):
+    def test_altera_item_pedido(self):
         serializer_pedido_antigo = PedidoSerializer(self.pedido_antigo)
         pedido_id_antigo = serializer_pedido_antigo.data.get('id')
         itens_antigos = serializer_pedido_antigo.data.get('itens')
