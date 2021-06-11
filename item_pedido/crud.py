@@ -15,7 +15,7 @@ def cria_item_pedido(pedido_id, itens):
         item_pedido.total = item.get('total')
         item_pedido.pedido_id = pedido_id
         item_pedido.save()
-        return True
+        return item_pedido
 
 
 def atualiza_itens_pedido(pedido_id, itens_novos):
