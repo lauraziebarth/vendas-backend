@@ -19,8 +19,8 @@ class CriaItemPedidoTests(TestCase):
         itens = serializer_pedido.data.get('itens')
         result = cria_item_pedido(pedido_id, itens)
 
-        self.assertEqual(result.produto_nome, 'TIE Fighter')
-        self.assertEqual(result.produto_multiplo, 2)
-        self.assertEqual(result.quantidade, 10)
-        self.assertEqual(result.produto_id, 4)
+        self.assertEqual(result['produto_nome'], 'TIE Fighter')
+        self.assertEqual(result['produto_multiplo'], 2)
+        self.assertEqual(result['quantidade'], 10)
+        self.assertEqual(result['produto_id'], 4)
 
