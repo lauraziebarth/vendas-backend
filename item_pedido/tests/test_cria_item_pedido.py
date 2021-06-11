@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from item_pedido.crud import cria_item_pedido
+from item_pedido.gateway import busca_todos_os_itens_de_um_pedido
 from pedidos.serializer import PedidoSerializer
 
 
@@ -17,10 +18,13 @@ class CriaItemPedidoTests(TestCase):
         serializer_pedido = PedidoSerializer(self.pedido)
         pedido_id = serializer_pedido.data.get('id')
         itens = serializer_pedido.data.get('itens')
-        result = cria_item_pedido(pedido_id, itens)
+        cria_item_pedido(pedido_id, itens)
 
-        self.assertEqual(result['produto_nome'], 'TIE Fighter')
-        self.assertEqual(result['produto_multiplo'], 2)
-        self.assertEqual(result['quantidade'], 10)
-        self.assertEqual(result['produto_id'], 4)
+        result = busca_todos_os_itens_de_um_pedido(pedido_id).count()
+        result_list = busca_todos_os_itens_de_um_pedido(pedido_id)
+        self.assertEqual(result, 1)
+        self.assertEqual(result_list[0].id, 1)
+        self.assertEqual(result_list[0].produto_id, 4)
+        self.assertEqual(result_list[0].produto_nome, 'TIE Fighter')
+        self.assertEqual(result_list[0].quantidade, 10)
 
