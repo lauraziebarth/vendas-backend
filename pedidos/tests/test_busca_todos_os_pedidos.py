@@ -40,10 +40,3 @@ class BuscaTodosOsItensDeUmPedidoTests(TestCase):
         self.assertEqual(result, 2)
         self.assertEqual(result_list[0].id, 1)
         self.assertEqual(result_list[1].condicao_pagamento, '30/60')
-
-    def test_busca_um_pedido(self):
-        result = busca_um_pedido(self.pedido_1.id)
-
-        self.assertEqual(result.condicao_pagamento, 'a vista')
-        self.assertEqual(result.id, 1)
-        self.assertEqual(result.cliente_id, self.cliente_1.id)
