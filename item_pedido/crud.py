@@ -20,6 +20,7 @@ def cria_item_pedido(pedido_id, itens):
 def atualiza_itens_pedido(pedido_id, itens_novos):
     itens_antigos = busca_todos_os_itens_de_um_pedido(pedido_id)
     novos_itens_ids = []
+    itens_antigos_ids = []
 
     for item_novo in itens_novos:
         novos_itens_ids.append(item_novo['id'])
@@ -37,7 +38,24 @@ def atualiza_itens_pedido(pedido_id, itens_novos):
         item.save()
 
     for item in itens_antigos:
+        itens_antigos_ids.append(item.id)
+
         if item.id not in novos_itens_ids:
             item = busca_um_item_pedido_por_id(item.id)
             item.excluido = True
             item.save()
+
+    for item in itens_novos:
+        print(item)
+        if item['id'] not in itens_antigos_ids:
+            item_criado = ItemPedido()
+            item_criado.produto_id = item['produto_id']
+            item_criado.produto_multiplo = item['produto_multiplo']
+            item_criado.produto_nome = item['produto_nome']
+            item_criado.produto_preco_tabela = item['produto_preco_tabela']
+            item_criado.quantidade = item['quantidade']
+            item_criado.preco_liquido = item['preco_liquido']
+            item_criado.rentabilidade = item['rentabilidade']
+            item_criado.total = item['total']
+            item_criado.pedido_id = pedido_id
+            item_criado.save()
