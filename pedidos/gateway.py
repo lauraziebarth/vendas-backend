@@ -27,6 +27,3 @@ def atualiza_pedido(pedido_id, pedido_novo):
     atualiza_itens_pedido(pedido_id, pedido_novo['itens'])
 
     return pedido
-
-
-
