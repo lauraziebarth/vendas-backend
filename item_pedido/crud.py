@@ -58,5 +58,3 @@ def atualiza_itens_pedido(pedido_id, itens_novos):
             item_criado.total = item['total']
             item_criado.pedido_id = pedido_id
             item_criado.save()
-
-        return item
